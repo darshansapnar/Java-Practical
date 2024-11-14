@@ -1,0 +1,48 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.employeescanner;
+
+import java.util.Scanner;
+class Employee {
+private String name;
+private int id;
+private double salary;
+public void inputDetails() {
+Scanner scanner = new Scanner(System.in);
+System.out.print("Enter employee name: ");
+name = scanner.nextLine();
+System.out.print("Enter employee ID: ");
+id = scanner.nextInt();
+System.out.print("Enter employee salary: ");
+salary = scanner.nextDouble();
+scanner.nextLine();
+}
+public void displayDetails() {
+System.out.println("Employee Name: " + name);
+System.out.println("Employee ID: " + id);
+System.out.println("Employee Salary: " + salary);
+}
+}
+class Manager extends Employee {
+private String department;
+public void inputDetails() {
+super.inputDetails();
+Scanner scanner = new Scanner(System.in);
+System.out.print("Enter department: ");
+department = scanner.nextLine();
+}
+public void displayDetails() {
+super.displayDetails();
+System.out.println("Department: " + department);
+}
+}
+public class EmployeeScanner {
+public static void main(String[] args) {
+Manager manager = new Manager();
+manager.inputDetails();
+System.out.println("Employee Details:");
+manager.displayDetails();
+}
+}
